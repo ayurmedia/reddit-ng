@@ -1,9 +1,13 @@
 reddit-ng
 =========
 
+http://reddit-ng.holomind.de/preview.png
+
 Browse reddit post &amp; comments at same time with next button and subreddit filter
 
 Tested and Optimized for Google-Chrome, maybe need some Javascript-Bugfixes in other Browsers. 
+
+
 
 Demo is on: 
 http://reddit-ng.holomind.de

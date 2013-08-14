@@ -1,7 +1,8 @@
 reddit-ng
 =========
 
-http://reddit-ng.holomind.de/preview.png
+![Preview of reddit-ng](/preview.png "Preview reddit ng")
+
 
 Browse reddit post &amp; comments at same time with next button and subreddit filter
 

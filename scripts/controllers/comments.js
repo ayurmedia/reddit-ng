@@ -271,20 +271,15 @@ angular.module('redditApp' )
 	//$scope.global = global;
 	// init
 	$scope.subreddit = $store.get('subreddit');
-	if ( $scope.subreddit == '' ) {
+	
+	if ( $scope.subreddit == null || $scope.subreddit == '' ) {
 		$scope.subreddit = "r/all";
 	}
 	
 	$scope.subreddit_filter = $store.get('subreddit_filter');
-	if ( $scope.subreddit == '' ) {
-		$scope.subreddit = " ";
+	if ( $scope.subreddit_filter == null ) {
+		$scope.subreddit_filter = " ";
 	}
-	/*
-	$scope.reddit_count = $store.get('reddit_count');
-	if ( $scope.reddit_count == '' ) {
-		$scope.reddit_count = 0;
-	}
-	*/
 	
 	$scope.load_data();
 	//	$scope.add_timeout();

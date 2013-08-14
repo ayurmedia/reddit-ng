@@ -3,6 +3,7 @@ reddit-ng
 
 ![Preview of reddit-ng](/preview.png "Preview reddit ng")
 
+(The Preview shows the same content in main-window and the comment-window. If you have a Image on imgur you will see the image on the left and the reddit-comments on the right. The screenshot just illustrates the general layout. The Buttons for Subreddit, Filter , Next are the main functions. 99% Percent you just use the next-button or the arrow-right key. )
 
 Browse reddit post &amp; comments at same time with next button and subreddit filter
 
@@ -49,6 +50,7 @@ Advantages to normal reddit:
 * the visited-counter now matches the post-url, as the post-name (reddit id) changes every day. so items you read already would apear again. this way you see it only once, also it automatically filters some reposts to the exact same url. 
 * you can go up to 10 pages, (it loads new pages from the frontpage automatically via json) then an "auto-skip" button will apear. if you press it, you can go another 10 Pages. This 10 page limit is also to prevent infinite loops if you have some strange subreddits or filters. 
 * you can even go forward with "->" right-arrow key. similar like the next button in imgur. if a page hijacs the focus with javascript:this.focus() then this behavior might brake and you have to press the "next"-button with a mouse-click. 
+* Images to imgur are changed so you not only see the image, but the full imgur page with comments there. (i like this behavior better than deeplinks, also then images are automatically resized properly. )
 
 Inpiration for this project was a chromium-plugin to display reddit in the developer-view. it's nice, but i like this project better, as it also shows the comments to a post automatically and i have a next button, and can use the right-arrow-key for forward. 
 

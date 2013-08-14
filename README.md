@@ -8,9 +8,13 @@ Tested and Optimized for Google-Chrome, maybe need some Javascript-Bugfixes in o
 Demo is on: 
 http://reddit-ng.holomind.de
 
-
 Make your Browser window 25% on the right side of your desktop.
 open http://reddit-ng.holomind.de
+
+If you clone this github-Project it might not work if you call it locally over file:// due to limitations in Ajax and Browser-Security. 
+
+Hosting and loading over a webserver is fine. Technology is angular.js (only html + css +js) no server-side code involved, all static html + client-side storage-api (html5) for saving temp data. (it will stay even if you close the browser-window). 
+
 
 It will open the Content in a new Browser-Window which will stay there. 
 It automatically has the remaining width compared to your last window. 

@@ -3,8 +3,11 @@ reddit-ng
 
 Browse reddit post &amp; comments at same time with next button and subreddit filter
 
+Tested and Optimized for Google-Chrome, maybe need some Javascript-Bugfixes in other Browsers. 
+
 Demo is on: 
 http://reddit-ng.holomind.de
+
 
 Make your Browser window 25% on the right side of your desktop.
 open http://reddit-ng.holomind.de

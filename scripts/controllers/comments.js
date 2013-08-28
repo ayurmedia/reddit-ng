@@ -21,6 +21,7 @@ angular.module('redditApp' )
 	$scope.filter_sfw = true;	
 	$scope.auto_timer = 60;
 	$scope.count_max = 999;
+	$scope.expire_seconds = 60*60*24*2; // 2 Days
 	$scope.auto_next = false; 	
 	$scope.auto_load = true;
 	$scope.auto_open = true;
@@ -64,6 +65,23 @@ angular.module('redditApp' )
 		$scope.data_url = 'http://reddit.com/'+ $scope.subreddit +'.json?limit=100&after=' + lastPostId + '&jsonp=JSON_CALLBACK';
 		$scope.list_url = 'http://reddit.com/'+ $scope.subreddit +'.mobile?limit=100&after=' + lastPostId + '';
 		$http.jsonp( $scope.data_url ).success(addNewPosts);
+		
+		var currentTime = Date.now() || +new Date(); 
+		
+		// $store garbage-collection
+		for (var key in localStorage){
+			var val = $store.get(key) +"" ; 
+			
+			if ( (/^reddit\_/).test(key) ) {
+			   var diff = ( currentTime - val )/1000 ;
+			   
+			   if (diff > $scope.expire_seconds )  {
+				   //console.log( key + " => " + val + " diff: "+ diff );
+			 	   store.remove(key);
+			   }
+			  //$store.remove(key);
+			}
+   		}
 	}
 	$scope.subreddit='';	
 	$scope.subreddit_filter='';	
@@ -184,33 +202,14 @@ angular.module('redditApp' )
 		}
 
 		if ( $scope.auto_open == true ) {
-			//alert('auto open');
-			//if(  top.location.href != location.href ) {	
-		        //		top.location.href = $scope.post.url;
-			//} else {
-				if ( $scope.openwin == 'false' || $scope.openwin.closed == true ) {
-				//alert('new');
-				//alert( location.search );
+			if ( $scope.openwin == 'false'  ) {
 				var w = screen.availWidth;
 				var h = screen.availHeight;
-				//var w1 = parseInt( w * 0.7 ) ;
-				//alert( window.outerWidth ); 
 				var w1 = parseInt( w  - window.outerWidth );
 				
 				$scope.openwin = window.open( $scope.post.url , 'popup'    , 'width='+w1+',height='+h+',left=0' ); 
-				
-				if ( location.search !='?opened' ) {
-					//window.close();
-					//$scope.mainwin = window.open( location.href +"?opened"  , 'comments' , 'left='+w1+',width='+(w -w1)+',height='+h ); 
-					//window.innerWidth = w - w1;
-				}
-					
-				} else {
-				//alert('set');
-				$scope.openwin.location.href = $scope.post.url;
-				}
-			//}
-			//	self.document.focus();
+			}
+			$scope.openwin.location.href = $scope.post.url;
 		} else {
 			//alert( 'no auto open');
 		}
@@ -224,33 +223,22 @@ angular.module('redditApp' )
 	$scope.set_store = function() {
 		//alert('set');
 		//mark as read
-		var count = $store.get('reddit_count') || 0 ;
+			var count = $store.get('reddit-count') || 0 ;
 		var that = 'reddit_'+ Math.abs( $scope.hash_code( $scope.post.url_orig )) ; 
 		
 		if( count == 0 ) {
-			$store.set('reddit_first', that );	
-			$store.set('reddit_last', that );	
-			$store.set('reddit_count',0);
+			$store.set('reddit-count',0);
 			count = 1;
 		}	
-		if ( count >= $scope.count_max ){
-			// remove head
-			var first  = $store.get('reddit_first') ;
-			var second = $store.get( first );
-			$store.remove( first );	
-			$store.set( 'reddit_first', second );	
-			count--;
-		} else {	
-		}
-		var last = $store.get('reddit_last'); 
-		$store.set(last , that)
 			if ( ($store.get(that) || 0 ) == 0 ) {
 				count++;
 			}
-		$store.set(that,1); 
-		$store.set('reddit_last', that);	
+		
+		var currentTime = Date.now() || +new Date(); 
+		
+		$store.set(that, currentTime); 
 		$store.set('subreddit', $scope.subreddit );
-		$store.set('reddit_count', count  );
+		$store.set('reddit-count', count  );
 
 	}
 

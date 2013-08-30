@@ -11,8 +11,8 @@
 			<a ng-href="{{post.url}}" target="popup" ng-hide="hidePost(post)" class="btn">P</a>
 			<a href="http://www.reddit.com{{post.permalink}}.mobile" target="iframe0" class="btn">C</a>
 			<a href="{{list_url}}" target="iframe0" class="btn" >L</a>
-			<input type="checkbox" value="true" class="btn" ng-model="auto_skip_self" />
 			<!--
+			<input type="checkbox" value="true" class="btn" ng-model="auto_skip_self" />
 			<button class="btn" ng-click="prev()">prev</button>	
 			-->
 			<button class="btn" ng-click="next()" id="next-button">next</button>	
@@ -25,7 +25,7 @@
 			-->
 			<button class="btn" ng-click="auto_skip=true;" ng-hide="auto_skip">auto skip</button>
 			<!--
-			<button class="btn" ng-click="auto_skip_open=true;window.open(document.location.href,'popup2');" ng-hide="auto_skip_open">O</button>
+			<button class="btn" ng-click="auto_skip_open=true;window.open('about:blank','popup');" ng-hide="auto_skip_open">O</button>
 			-->
 		</form>
 	</div>

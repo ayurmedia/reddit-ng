@@ -12,6 +12,6 @@ var appModule = angular.module('redditApp', [])
         controller: 'CommentCtrl'
       })
       .otherwise({
-        redirectTo: '/reddit-ng/'
+        redirectTo: '/reddit-ng/index.html'
       });
   });

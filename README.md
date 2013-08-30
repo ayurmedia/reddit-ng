@@ -12,10 +12,10 @@ _Tested and Optimized for Google-Chrome_, maybe need some Javascript-Bugfixes in
 
 
 Demo is on: 
-http://ayurmedia.github.io/reddit-ng/
+http://ayurmedia.github.io/reddit-ng/index.html
 
 Make your Browser window 25% on the right side of your desktop.
-open http://ayurmedia.github.io/reddit-ng/
+open http://ayurmedia.github.io/reddit-ng/index.html
 
 If you clone this github-Project it might not work if you call it locally over file:// due to limitations in Ajax and Browser-Security. 
 

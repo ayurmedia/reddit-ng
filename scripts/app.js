@@ -7,11 +7,11 @@ var appModule = angular.module('redditApp', [])
 	// in HashBang-Mode it also works with prefixes in path
 	$locationProvider.html5Mode(true);
     $routeProvider
-      .when('/reddit-ng/', {
+      .when('/', {
         templateUrl: 'views/comments.html',
         controller: 'CommentCtrl'
       })
       .otherwise({
-        redirectTo: '/reddit-ng/index.html'
+        redirectTo: '/'
       });
   });

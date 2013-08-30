@@ -7,15 +7,15 @@ reddit-ng
 
 Browse reddit post &amp; comments at same time with next button and subreddit filter
 
-Tested and Optimized for Google-Chrome, maybe need some Javascript-Bugfixes in other Browsers. 
+_Tested and Optimized for Google-Chrome_, maybe need some Javascript-Bugfixes in other Browsers. 
 
 
 
 Demo is on: 
-http://reddit-ng.holomind.de
+http://ayurmedia.github.io/reddit-ng/
 
 Make your Browser window 25% on the right side of your desktop.
-open http://reddit-ng.holomind.de
+open http://ayurmedia.github.io/reddit-ng/
 
 If you clone this github-Project it might not work if you call it locally over file:// due to limitations in Ajax and Browser-Security. 
 

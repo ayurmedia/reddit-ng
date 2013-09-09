@@ -77,7 +77,8 @@ angular.module('redditApp' )
 			   
 			   if (diff > $scope.expire_seconds )  {
 				   //console.log( key + " => " + val + " diff: "+ diff );
-			 	   store.remove(key);
+			 	   
+			 	   $store.remove(key);
 			   }
 			  //$store.remove(key);
 			}
